@@ -1,0 +1,9 @@
+---
+- hosts: prod
+  become: yes 
+  tasks:
+  - name: deploying war file to prod server
+    copy:
+      src: /var/lib/jenkins/workspace/proj4/target/hello-world-war-1.0.0.war
+      dest: /usr/share/tomcat/webapps/hello.war
+
